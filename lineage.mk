@@ -25,7 +25,7 @@ PRODUCT_RELEASE_NAME := msm8909
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lenovo/achilles/full_achilles.mk)
+$(call inherit-product, device/lenovo/achilles/lineage_achilles.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_achilles
