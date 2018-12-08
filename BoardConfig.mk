@@ -70,7 +70,7 @@ TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
+#TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_UNIFIED_DEVICE := true
 
@@ -93,7 +93,7 @@ TARGET_USES_LOGD := false
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
+#TARGET_USERIMAGES_USE_F2FS := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000 # (20M)
@@ -120,16 +120,16 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
     device/lenovo/achilles/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    bootanim.te \
-    diag.te \
-    file.te \
-    file_contexts \
-    init.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    netd.te \
-    system_server.te 
+#BOARD_SEPOLICY_UNION += \
+#    bootanim.te \
+#    diag.te \
+#    file.te \
+#    file_contexts \
+#    init.te \
+#    mm-qcamerad.te \
+#    mpdecision.te \
+#    netd.te \
+#    system_server.te 
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file

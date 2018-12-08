@@ -21,7 +21,7 @@ set -e
 DEVICE="achilles"
 VENDOR="lenovo"
 
-INITIAL_COPYRIGHT_YEAR=**** FILL IN COPYRIGHT YEAR ****
+INITIAL_COPYRIGHT_YEAR="2015"
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

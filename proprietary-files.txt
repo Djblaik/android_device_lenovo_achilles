@@ -5,6 +5,7 @@ usr/keylayout/Goodix-TS.kl \
 usr/keylayout/gpio-keys.kl \
 usr/keylayout/atmel_mxt_ts.kl \
 lib/sensors.native.so \
+lib/libcryptfs_hw.so
 lib/hw/camera.msm8909.so \
 lib/hw/sensors.msm8909.so \
 lib/hw/gps.default.so \
