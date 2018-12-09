@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-	<project name="djblaik/android_device_lenovo_achilles" path="device/lenovo/achilles" remote="github" revision="master" />
-        <project name="djblaik/android_vendor_lenovo_achilles" path="vendor/lenovo/achilles" remote="github" revision="master" />        
-        <project name="djblaik/android_kernel_lenovo_achilles" path="kernel/lenovo/achilles" remote="github" revision="master" />
-	<project path="device/qcom/common" name="CyanogenMod/android_device_qcom_common" remote="github" revision="cm-13.0" />
-</manifest>
