@@ -43,6 +43,9 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libswdap.so
+vendor/etc/dolby/dax-default.xml
+
+
 
 # Battery
 bin/vm_bms
@@ -159,8 +162,11 @@ vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
 
-# Huawei
+# Lenovo
 bin/serialnoread
+
+#lights
+lib/hw/lights.msm8909.so
 
 # OMX
 lib/libOmxSwVencMpeg4.so
@@ -172,6 +178,17 @@ vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxIttiamVdec.so
 vendor/lib/libOmxQcelp13Dec.so
+
+#other
+lib/hw/copybit.msm8909.so
+lib/hw/gralloc.msm8909.so
+lib/hw/memtrack.msm8909.so
+lib/hw/hwcomposer.msm8909.so
+lib/hw/audio.primary.msm8909.so
+lib/hw/gatekeeper.msm8909.so
+lib/hw/keystore.msm8909.so
+lib/hw/sound_trigger.primary.msm8909.so
+
 
 
 # Perf
@@ -208,6 +225,11 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsubsystem_control.so
+
+#RIDL
+vendor/etc/RIDL/Goldenlogmask.dmc
+vendor/etc/RIDL/qdss.cfg
+vendor/etc/RIDL/RIDL.db
 
 # RIL
 -app/shutdownlistener/shutdownlistener.apk
@@ -269,3 +291,7 @@ vendor/lib/mediadrm/libprmediadrmplugin.so
 vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L3.so
+
+#wifi
+lib/libwifi-hal-qcom.so
+lib/libwifi-service.so

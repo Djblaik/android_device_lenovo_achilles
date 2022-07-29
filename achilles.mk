@@ -32,6 +32,11 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmmjpeg_interface \
     mm-qcamera-app
+    
+# Compatibility
+PRODUCT_PACKAGES += \
+    libboringssl-compat \
+    libril_shim
 
 #Display
 PRODUCT_PACKAGES += \
@@ -56,8 +61,22 @@ PRODUCT_PACKAGES += \
     init.qcom.zram.sh \
     init.qti.ims.sh \
     init.qti.synaptics_dsx_qhd.sh
+    
+# Ebtables
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc
+    
+# FM radio
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
 
 # GPS
+PRODUCT_PACKAGES += \
+    gps.msm8909
+    
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
@@ -66,21 +85,38 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.loc.nlp_name=com.qualcomm.location \
     ro.gps.agps_provider=1
 
+
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8909
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8909
+
+
 # Init
 PRODUCT_PACKAGES += \
+    charger \
     fstab.qcom \
     init.carrier.rc \
     init.class_main.sh \
     init.mdm.sh \
     init.qcom.bms.sh \
     init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
     init.qcom.factory.rc \
     init.qcom.rc \
     init.qcom.serialno.sh \
     init.qcom.sh \
+    init.syspart_fixup.sh \
     init.qcom.usb.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    ueventd.rc \
+    init.recovery.qcom.rc \
+    init.recovery.usb.rc
+    
 
 # Media
 PRODUCT_PACKAGES += \
@@ -129,7 +165,7 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles_8909.xml:system/etc/med
                       $(LOCAL_PATH)/media/media_codecs_performance_8909.xml:system/etc/media_codecs_performance.xml
 endif
 
-$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 #PRODUCT_PROPERTY_OVERRIDES += \
 #       dalvik.vm.heapgrowthlimit=128m \
 #       dalvik.vm.heapminfree=6m
@@ -147,20 +183,20 @@ PRODUCT_PACKAGES += libGLES_android
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    $(LOCAL_PATH)/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/mixer_paths_msm8909_pm8916.xml:system/etc/mixer_paths_msm8909_pm8916.xml \
-    $(LOCAL_PATH)/mixer_paths_wcd9326_i2s.xml:system/etc/mixer_paths_wcd9326_i2s.xml \
-    $(LOCAL_PATH)/mixer_paths_skua.xml:system/etc/mixer_paths_skua.xml \
-    $(LOCAL_PATH)/mixer_paths_skuc.xml:system/etc/mixer_paths_skuc.xml \
-    $(LOCAL_PATH)/mixer_paths_skue.xml:system/etc/mixer_paths_skue.xml \
-    $(LOCAL_PATH)/mixer_paths_qrd_skut.xml:system/etc/mixer_paths_qrd_skut.xml \
-    $(LOCAL_PATH)/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    $(LOCAL_PATH)/audio_platform_info.xml:system/etc/audio_platform_info.xml
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_msm8909_pm8916.xml:system/etc/mixer_paths_msm8909_pm8916.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_wcd9326_i2s.xml:system/etc/mixer_paths_wcd9326_i2s.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_skua.xml:system/etc/mixer_paths_skua.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_skuc.xml:system/etc/mixer_paths_skuc.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_skue.xml:system/etc/mixer_paths_skue.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_qrd_skut.xml:system/etc/mixer_paths_qrd_skut.xml \
+    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml
 
 PRODUCT_BOOT_JARS += qcom.fmradio \
 
@@ -176,7 +212,7 @@ endif
 
 # Listen configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/listen_platform_info.xml:system/etc/listen_platform_info.xml
+    $(LOCAL_PATH)/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml
 
 # Feature definition files for msm8909
 PRODUCT_COPY_FILES += \
@@ -225,6 +261,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
+    
+PRODUCT_PACKAGES += \
+    libQWiFiSoftApCfg \
+    libwcnss_qmi \
+    wcnss_service
+
 
 PRODUCT_PACKAGES += \
 AntHalService \
@@ -267,6 +309,9 @@ PRODUCT_PACKAGES += \
          
 PRODUCT_PACKAGES += \
         setproperties
+        
+PRODUCT_COPY_FILES := \
+$(LOCAL_PATH)/kernel:kernel
 
 
 $(call inherit-product, vendor/lenovo/achilles/achilles-vendor.mk)
