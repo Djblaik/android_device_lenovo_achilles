@@ -46,10 +46,11 @@ BOARD_SECOND_OFFSET	 := 0x00f00000
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
 #TARGET_PREBUILT_KERNEL := device/lenovo/achilles/kernel
+#TARGET_PREBUILT_DT := $(LOCAL_PATH)/dt.img
 TARGET_KERNEL_SOURCE := kernel/lenovo/msm8909
 TARGET_KERNEL_CONFIG := achilles_defconfig
 #BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
 TARGET_KERNEL_ARCH := arm
 
 # ANT+
@@ -121,7 +122,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12277759488
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
-#BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
 # Power
