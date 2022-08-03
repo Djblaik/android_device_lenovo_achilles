@@ -45,10 +45,10 @@ BOARD_KERNEL_TAGS_OFFSET := 0X00000100
 BOARD_SECOND_OFFSET	 := 0x00f00000
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
-#TARGET_PREBUILT_KERNEL := device/lenovo/achilles/kernel
-#TARGET_PREBUILT_DT := $(LOCAL_PATH)/dt.img
-TARGET_KERNEL_SOURCE := kernel/lenovo/msm8909
-TARGET_KERNEL_CONFIG := achilles_defconfig
+TARGET_PREBUILT_KERNEL := device/lenovo/achilles/kernel
+#BOARD_KERNEL_PREBUILT_DT := $(LOCAL_PATH)/dt.img
+#TARGET_KERNEL_SOURCE := kernel/lenovo/msm8909
+#TARGET_KERNEL_CONFIG := achilles_defconfig
 #BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
 TARGET_KERNEL_ARCH := arm
@@ -134,7 +134,7 @@ BOARD_USES_QCOM_HARDWARE := true
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/recovery.fstab
 
 
 # SELinux

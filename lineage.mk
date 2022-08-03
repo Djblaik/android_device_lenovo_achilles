@@ -18,21 +18,19 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 800
 TARGET_BOOTANIMATION_HALF_RES := true
 
-# Release name
-PRODUCT_RELEASE_NAME := msm8909
-
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/lenovo/achilles/achilles.mk)
+$(call inherit-product, device/lenovo/achilles/tb2-x30f.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_achilles
 PRODUCT_BRAND := lenovo
 PRODUCT_DEVICE := achilles
-PRODUCT_MODEL := achilles
+PRODUCT_MODEL := tab 2 a10-30
 PRODUCT_MANUFACTURER := lenovo
+PRODUCT_RELEASE_NAME := tab 2 a10-30
 
 
 

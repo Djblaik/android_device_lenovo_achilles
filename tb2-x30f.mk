@@ -1,5 +1,12 @@
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, vendor/lenovo/achilles/achilles-vendor.mk)
+
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 TARGET_USES_QCOM_BSP := true
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
@@ -46,21 +53,21 @@ PRODUCT_PACKAGES += \
     copybit.msm8909
 
 # etc
-PRODUCT_PACKAGES += \
-    init.qcom.audio.sh \
-    init.qcom.bt.sh \
-    init.qcom.coex.sh \
-    init.qcom.debug.sh \
-    init.qcom.efs.sync.sh \
-    init.qcom.fm.sh \
-    init.qcom.modem_links.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
-    init.qcom.uicc.sh \
-    init.qcom.wifi.sh \
-    init.qcom.zram.sh \
-    init.qti.ims.sh \
-    init.qti.synaptics_dsx_qhd.sh
+#PRODUCT_PACKAGES += \
+ #   init.qcom.audio.sh \
+ #   init.qcom.bt.sh \
+ #   init.qcom.coex.sh \
+ #   init.qcom.debug.sh \
+ #   init.qcom.efs.sync.sh \
+ #   init.qcom.fm.sh \
+ #   init.qcom.modem_links.sh \
+ #   init.qcom.post_boot.sh \
+ #   init.qcom.sdio.sh \
+ #   init.qcom.uicc.sh \
+ #   init.qcom.wifi.sh \
+ #   init.qcom.zram.sh \
+ #   init.qti.ims.sh \
+ #   init.qti.synaptics_dsx_qhd.sh
     
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -95,30 +102,9 @@ PRODUCT_PACKAGES += \
     lights.msm8909
 
 
-# Init
-PRODUCT_PACKAGES += \
-    charger \
-    fstab.qcom \
-    init.carrier.rc \
-    init.class_main.sh \
-    init.mdm.sh \
-    init.qcom.bms.sh \
-    init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.factory.rc \
-    init.qcom.rc \
-    init.qcom.serialno.sh \
-    init.qcom.sh \
-    init.syspart_fixup.sh \
-    init.qcom.usb.rc \
-    init.target.rc \
-    ueventd.qcom.rc \
-    ueventd.rc \
-    
+# Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/root/init.recovery.qcom.rc:root \
-    $(LOCAL_PATH)/root/init.recovery.usb.rc:root
-    
+    $(call find-copy-subdir-files,*,device/lenovo/achilles/ramdisk,root)
 
 # Media
 PRODUCT_PACKAGES += \
@@ -243,9 +229,9 @@ PRODUCT_PACKAGES += wcnss_service
 PRODUCT_PACKAGES += hwdiag
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat \
-    $(LOCAL_PATH)/wlan_mac.bin:persist/wlan_mac.bin \
-    $(LOCAL_PATH)/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    $(LOCAL_PATH)/wifi/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat \
+    $(LOCAL_PATH)/wifi/wlan_mac.bin:persist/wlan_mac.bin \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.currenttest.timeout.sh:system/etc/init.currenttest.timeout.sh
@@ -308,8 +294,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         setproperties
         
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/lenovo/achilles/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+        
 PRODUCT_COPY_FILES := \
 $(LOCAL_PATH)/kernel:kernel
 
 
-$(call inherit-product, vendor/lenovo/achilles/achilles-vendor.mk)
+
