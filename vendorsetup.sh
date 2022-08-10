@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo lineage_achilles-user
-add_lunch_combo lineage_achilles-userdebug
-add_lunch_combo lineage_achilles-eng
+add_lunch_combo lineage_TB2X30F-user
+add_lunch_combo lineage_TB2X30F-userdebug
+add_lunch_combo lineage_TB2X30F-eng

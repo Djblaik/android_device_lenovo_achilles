@@ -6,7 +6,7 @@
 #include $(CLEAR_VARS)
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),achilles)
+ifeq ($(TARGET_DEVICE),TB2X30F)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

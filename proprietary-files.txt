@@ -1,6 +1,15 @@
 # Adreno
+etc/firmware/a225_pfp.fw
+etc/firmware/a225_pm4.fw
+etc/firmware/a225p5_pm4.fw
 etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
+etc/firmware/a330_pfp.fw
+etc/firmware/a330_pm4.fw
+etc/firmware/a420_pfp.fw
+etc/firmware/a420_pm4.fw
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -32,6 +41,13 @@ etc/acdbdata/QRD/QRD_Handset_cal.acdb
 etc/acdbdata/QRD/QRD_Headset_cal.acdb
 etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+etc/acdbdata/MTP/MTP_General_cal.acdb
+etc/acdbdata/MTP/MTP_Global_cal.acdb
+etc/acdbdata/MTP/MTP_Handset_cal.acdb
+etc/acdbdata/MTP/MTP_Headset_cal.acdb
+etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
@@ -43,7 +59,7 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libswdap.so
-vendor/etc/dolby/dax-default.xml
+bin/mm-audio-ftm
 
 
 
@@ -53,6 +69,7 @@ bin/vm_bms
 # Bluetooth
 bin/btnvtool
 bin/hci_qcomm_init
+bin/cnss-daemon
 vendor/lib/libbtnv.so
 
 # Camera
@@ -144,6 +161,7 @@ etc/firmware/cpp_firmware_v1_4_0.fw
 
 # DRM
 bin/qseecomd
+bin/qseecom_sample_client
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
@@ -151,11 +169,15 @@ vendor/lib/librpmb.so
 vendor/lib/libssd.so
 
 # GPS
+lib/hw/gps.default.so
+lib/libgps.utils.so
 etc/flp.conf
 etc/izat.conf
 etc/sap.conf
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
+lib/libloc_core.so
+lib/libloc_eng.so
 vendor/lib/hw/flp.default.so
 vendor/lib/libflp.so
 vendor/lib/libgeofence.so
@@ -163,7 +185,7 @@ vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
 
 # Lenovo
-bin/serialnoread
+bin/serialno
 
 #lights
 lib/hw/lights.msm8909.so
@@ -180,14 +202,16 @@ vendor/lib/libOmxIttiamVdec.so
 vendor/lib/libOmxQcelp13Dec.so
 
 #other
-lib/hw/copybit.msm8909.so
-lib/hw/gralloc.msm8909.so
-lib/hw/memtrack.msm8909.so
-lib/hw/hwcomposer.msm8909.so
-lib/hw/audio.primary.msm8909.so
 vendor/lib/hw/gatekeeper.msm8909.so
 vendor/lib/hw/keystore.msm8909.so
 vendor/lib/hw/sound_trigger.primary.msm8909.so
+lib/libtsvideoprocess.so
+vendor/bin/audioflacapp
+vendor/bin/chamomile_provision
+vendor/bin/fidodaemon
+vendor/bin/qti
+vendor/bin/sampleauthdaemon
+vendor/bin/slim_daemon
 
 
 
@@ -225,11 +249,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsubsystem_control.so
-
-#RIDL
-vendor/etc/RIDL/GoldenLogmask.dmc
-vendor/etc/RIDL/qdss.cfg
-vendor/etc/RIDL/RIDL.db
+bin/qcom-system-daemon
 
 # RIL
 -app/shutdownlistener/shutdownlistener.apk
@@ -255,6 +275,7 @@ vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 
 # Sensors
+lib/sensors.native.so
 lib/hw/sensors.msm8909.so
 vendor/etc/calmodule.cfg
 vendor/lib/libcalmodule_common.so
@@ -281,6 +302,11 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
 # Widevine
+etc/firmware/widevine.b00
+etc/firmware/widevine.b01
+etc/firmware/widevine.b02
+etc/firmware/widevine.b03
+etc/firmware/widevine.mdt
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/drm/libdrmprplugin.so
 vendor/lib/drm/libomadrmengine.so
@@ -293,5 +319,15 @@ vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L3.so
 
 #wifi
+bin/wcnss_service
+etc/wifi/WCNSS_qcom_cfg.ini
+etc/wifi/p2p_supplicant_overlay.conf
+etc/wifi/wpa_supplicant.conf
+etc/wifi/wpa_supplicant_overlay.conf
 lib/libwifi-hal-qcom.so
 lib/libwifi-service.so
+
+#others
+etc/sec_config
+bin/pm-service
+bin/setproperties
