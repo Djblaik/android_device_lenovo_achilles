@@ -14,3 +14,4 @@
 # Added by baijianhua to make otg enable (A6500) HQ01774721 20160303 begin
 /devices/platform/msm_hsusb*                  /storage/usbotg    vfat    nosuid,nodev         wait,voldmanaged=usbotg:auto
 # Added by baijianhua to make otg enable (A6500) HQ01774721 20160303 end
+/dev/block/bootdevice/by-name/misc         /misc           emmc    defaults                                                        defaults
