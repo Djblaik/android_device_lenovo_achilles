@@ -291,9 +291,9 @@ on mmi
     start qcomsysd
     start srvmag_ffbm
     start ptt_ffbm
-    /* Added by yanwenlong to fastmmi log. (6500M) SW00183405 2016-3-1 begin */
+    # Added by yanwenlong to fastmmi log. (6500M) SW00183405 2016-3-1 begin */
     start mmi_aplog
-    /* Added by yanwenlong to fastmmi log. (6500M) SW00183405 2016-3-1 end */
+    # Added by yanwenlong to fastmmi log. (6500M) SW00183405 2016-3-1 end */
 
 on ffbm
     trigger early-fs

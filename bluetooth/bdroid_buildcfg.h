@@ -1,10 +1,5 @@
 /*
- *
- *  Copyright (c) 2013, The Linux Foundation. All rights reserved.
- *  Not a Contribution, Apache license notifications and license are retained
- *  for attribution purposes only.
- *
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,18 +16,6 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-#define BTM_DEF_LOCAL_NAME   "Achilles"
-#define BLUETOOTH_QTI_SW TRUE
-// Disables read remote device feature
-#define BTA_SKIP_BLE_READ_REMOTE_FEAT FALSE
-#define MAX_ACL_CONNECTIONS    7
-#define MAX_L2CAP_CHANNELS    16
-#define BLE_VND_INCLUDED   TRUE
-// skips conn update at conn completion
-#define BTA_BLE_SKIP_CONN_UPD  FALSE
-#define BLE_PERIPHERAL_ADV_NAME  FALSE
-#define BT_CLEAN_TURN_ON_DISABLED 1
 
-/* Defined if the kernel does not have support for CLOCK_BOOTTIME_ALARM */
-#define KERNEL_MISSING_CLOCK_BOOTTIME_ALARM TRUE
+#define BTM_DEF_LOCAL_NAME   "Lenovo Tab2 a10-30"
 #endif

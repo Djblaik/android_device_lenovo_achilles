@@ -22,6 +22,6 @@
 <resources>
 
     <!-- Hide this setting because we are forcing it to be enabled in build.prop -->
-    <bool name="config_enableLockScreenRotation">false</bool>
-
+    <bool name="config_enableLockScreenRotation">true</bool>
+	<bool name="config_allowAllRotations">true</bool>
 </resources>

@@ -1,7 +1,6 @@
-DEVICE_PACKAGE_OVERLAYS := \
-    $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
-$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-10in-hdpi-1024-dalvik-heap.mk)
 
 #Audio
 PRODUCT_COPY_FILES += \
@@ -75,30 +74,31 @@ PRODUCT_PACKAGES += \
     init.carrier.rc \
     init.class_main.sh \
     init.mdm.sh \
-    init.qcom.bms.sh \
-    init.qcom.class_core.sh \
-    init.qcom.factory.rc \
-    init.qcom.rc \
-    init.qcom.serialno.sh \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    init.target.rc \
-    ueventd.qcom.rc \
     init.qcom.audio.sh \
+    init.qcom.bms.sh \
     init.qcom.bt.sh \
+    init.qcom.class_core.sh \
     init.qcom.coex.sh \
     init.qcom.debug.sh \
     init.qcom.efs.sync.sh \
+    init.qcom.factory.rc \
     init.qcom.fm.sh \
     init.qcom.modem_links.sh \
     init.qcom.post_boot.sh \
+    init.qcom.rc \
     init.qcom.sdio.sh \
+    init.qcom.serialno.sh \
+    init.qcom.sh \
     init.qcom.uicc.sh \
+    init.qcom.usb.rc \
     init.qcom.wifi.sh \
     init.qcom.zram.sh \
     init.qti.ims.sh \
-    init.qti.synaptics_dsx_qhd.sh
-
+    init.qti.synaptics_dsx_qhd.sh \
+    init.target.rc \
+    ueventd.qcom.rc \
+    #init.qcom.early_boot.sh
+    
 # Media
 PRODUCT_PACKAGES += \
     libstagefrighthw \
@@ -120,17 +120,17 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -158,20 +158,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml
 
 # Keylayouts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-    $(LOCAL_PATH)/configs/keylayout/ft5x06_ts.kl:system/usr/keylayout/ft5x06_ts.kl \
-    $(LOCAL_PATH)/configs/keylayout/FT5x36.kl:system/usr/keylayout/FT5x36.kl \
-    $(LOCAL_PATH)/configs/keylayout/Goodix-TS.kl:system/usr/keylayout/Goodix-TS.kl \
-    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/configs/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+#    $(LOCAL_PATH)/configs/keylayout/ft5x06_ts.kl:system/usr/keylayout/ft5x06_ts.kl \
+#    $(LOCAL_PATH)/configs/keylayout/FT5x36.kl:system/usr/keylayout/FT5x36.kl \
+#    $(LOCAL_PATH)/configs/keylayout/Goodix-TS.kl:system/usr/keylayout/Goodix-TS.kl \
+#    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+#    $(LOCAL_PATH)/configs/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/wifi/hostapd.conf:system/etc/hostapd/hostapd_default.conf \
     $(LOCAL_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+#    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+#    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 # Listen configuration file
 PRODUCT_COPY_FILES += \
@@ -200,9 +200,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf \
-    wpa_supplicant_overlay.conf \
-    p2p_supplicant_overlay.conf
-
 
 # ANT+ stack
 PRODUCT_PACKAGES += \
@@ -217,8 +214,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
-	
-PRODUCT_CHARACTERISTICS := tablet
 
+PRODUCT_CHARACTERISTICS := tablet 
 
 $(call inherit-product-if-exists, vendor/lenovo/tb2x30f/tb2x30f-vendor.mk)

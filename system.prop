@@ -1,5 +1,4 @@
-#
-# system.prop for msm8909
+ system.prop for msm8909
 #
 
 #rild.libpath=/system/lib/libreference-ril.so
@@ -201,11 +200,6 @@ ro.emmc_size=8GB
 #Added by zhangxin for QQ video call rotation, A650X-M, A6501M-177/A6502M-140, 2016-6-13
 ro.qq.camera.sensor=3
 
-#Bluetooth
-qcom.bluetooth.soc=smd
+ro.sf.hwrotation=90
 
-#Tablet Wifi
-ro.carrier=wifi-only
-
-# NO ril device
-ro.radio.noril=1
+ro.sf.lcd_density=160
