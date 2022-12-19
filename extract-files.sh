@@ -19,7 +19,7 @@
 
 set -e
 
-DEVICE="achilles"
+DEVICE="tb2-x30f"
 VENDOR="lenovo"
 
 # Load extract_utils and do some sanity checks
