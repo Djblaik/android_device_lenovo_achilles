@@ -174,8 +174,6 @@
                It is actually the latter definition that wins but overlay both
                to be on the safe side.
  -->
-    <bool name="config_enableLockScreenRotation">true</bool>
+    <bool name="config_enableLockScreenRotation">false</bool>
     
-    <bool name="config_allowAllRotations">true</bool>
-
 </resources>
